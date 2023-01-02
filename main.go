@@ -70,7 +70,7 @@ func main() {
 					// map[addr:e580a83705c2ce2dd163bda2ce589a8d connectable:yes
 					// 		frameCounter:161 mac:582d34104766 name:ClearGrass Temp & RH productId:839
 					//		rssi:-76 temp:20 version:3]
-					allowedFields := []string{"rssi", "temp", "name", "hum", "battery", "uuid", "major", "minor", "txPower"}
+					allowedFields := []string{"rssi", "temp", "name", "hum", "bat", "uuid", "major", "minor", "txPower"}
 
 					transitMessage := make(map[string]string)
 

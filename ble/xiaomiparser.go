@@ -142,7 +142,7 @@ func (p XiaomiParser) Format() {
 			eventType := p.parseEventType()
 			if eventType == EventTypeBattery {
 				p.ParserLogMessage("battery event")
-				p.ParserLog("battery", fmt.Sprint(p.parseBatteryEvent()))
+				p.ParserLog("bat", fmt.Sprint(p.parseBatteryEvent()))
 			} else if eventType == EventTypeTemperature {
 				p.ParserLogMessage("temp event")
 				p.ParserLog("temp", fmt.Sprint(p.parseTemperatureEvent()))
