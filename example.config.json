@@ -1,0 +1,24 @@
+{
+    // Sample config.json
+    // with capabilities to filter what gets published
+    
+    // only allow
+    "macWhitelist": [
+        // Use it like this on Linux
+        "582D3450E878", // QingPing Alarm Clock  
+
+        // OSX has other addresses
+        "0C7B139A9A1A3F3B1459772C59CAF1D9", // bluetooth
+        "E580A83705C2CE2DD163BDA2CE589A8D", // ClearGrass Temp Device
+        "D459084A9351DED143D124715E941D78", // OClean X tooth brush
+    ],
+    // will be ignored
+    "macBlacklist": [
+        "428CA3D9574C782BB2BC8268EF62A6F5" // [TV] Samsung Q60 Series (65)
+    ],
+    "blacklistNames": [
+        "N01JC", // Google Nest Device
+        "N0MD9", // Google Nest Device
+        "Hue Lamp", // Philips Hue devices
+    ]
+}

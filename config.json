@@ -1,0 +1,16 @@
+{
+    "macWhitelist": [
+        { "mac": "0C7B139A9A1A3F3B1459772C59CAF1D9" },
+        { "mac": "E580A83705C2CE2DD163BDA2CE589A8D" },
+        { "mac": "D459084A9351DED143D124715E941D78" },
+        { "mac": "16bb5a8b07b2398a4bc653007fb0f5e8" }
+    ],
+    "macBlacklist": [
+        { "mac": "428CA3D9574C782BB2BC8268EF62A6F5" }
+    ],
+    "blacklistNames": [
+        { "name": "N0MD9" },
+        { "name": "N01JC" },
+        { "name": "Hue Lamp" }
+    ]
+}
