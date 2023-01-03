@@ -53,8 +53,12 @@ func ScanAdvertismentHandler(a ble.Advertisement) map[string]string {
 		for _, adv := range a.ServiceData() {
 			parser := bleparsing.NewXiaomiParser(adv.Data, adv.UUID)
 			if parser.IsXiaomiAdv() {
-				// parser.Format()
 				parser.AddToMap(dataMap)
+			}
+
+			cgParser := bleparsing.NewCleargrassParser(adv.Data, adv.UUID)
+			if cgParser.IsCleargrassAdv() {
+				cgParser.AddToMap(dataMap)
 			}
 		}
 	}
@@ -74,7 +78,8 @@ func ScanResultCheckError(err error) {
 	case context.DeadlineExceeded:
 		fmt.Printf("done\n")
 	case context.Canceled:
-		fmt.Printf("canceled\n")
+		log.Fatalf(("canceled"))
+		// fmt.Printf("canceled\n")
 	default:
 		fmt.Printf("Error")
 		fmt.Printf(err.Error())

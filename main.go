@@ -35,13 +35,14 @@ func main() {
 	opts.SetPassword(os.Getenv("MQTT_PASSWORD"))
 	opts.SetCleanSession(true)
 
-	choke := make(chan [2]string)
-
 	opts.SetAutoReconnect(true)
-	opts.SetBinaryWill(topic+id+"/LWT", []byte("Offline"), byte(1), true)
-	opts.SetDefaultPublishHandler(func(client MQTT.Client, msg MQTT.Message) {
-		choke <- [2]string{msg.Topic(), string(msg.Payload())}
-	})
+	opts.SetWill(topic+id+"/LWT", "Offline", byte(0), true)
+
+	// needed for subscribe - not implemented yet
+	// choke := make(chan [2]string)
+	// opts.SetDefaultPublishHandler(func(client MQTT.Client, msg MQTT.Message) {
+	// 	choke <- [2]string{msg.Topic(), string(msg.Payload())}
+	// })
 
 	client := MQTT.NewClient(opts)
 	if token := client.Connect(); token.Wait() && token.Error() != nil {
